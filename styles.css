@@ -8,6 +8,8 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 100%; /* Ensure full screen width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -21,17 +23,16 @@ header {
   position: fixed;
   top: 0;
   z-index: 1000;
-  height: 60px; /* Fixed height for header */
+  height: 60px;
 }
 
-/* Title Header */
 .header-title {
   font-size: 24px;
   color: #333333;
   margin: 0;
   flex-grow: 1;
   text-align: center;
-  line-height: 60px; /* Center the title vertically */
+  line-height: 60px;
 }
 
 .header-title a {
@@ -43,7 +44,6 @@ header {
   text-decoration: underline;
 }
 
-/* Transparent Hamburger Menu */
 .hamburger-menu {
   position: relative;
 }
@@ -90,7 +90,6 @@ header {
   display: block;
 }
 
-/* Contact Info Dropdown */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -152,11 +151,10 @@ header {
   display: block;
 }
 
-/* Main Content */
 main {
-  margin-top: 120px; /* Increased margin-top for more space below the header */
+  margin-top: 120px;
   text-align: center;
-  width: 100%; /* Ensure it spans the entire width */
+  width: 98%;
 }
 
 .profile-container {
@@ -164,7 +162,9 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  height: auto; /* Allow height to grow */
+  width: 98%; /* 96% width to leave 2% margin on each side */
+  margin: 0 auto; /* Centers the profile container */
+  flex-direction: column;
 }
 
 .profile-card {
@@ -173,6 +173,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 100%; /* Full width for larger screens */
+  max-width: 100%; /* Ensures no width constraint */
 }
 
 .profile-picture {
@@ -208,79 +210,43 @@ main {
 .linkedin-link:hover {
   background-color: #005582;
 }
-/* General styling remains the same */
 
 .layout-table {
-  width: 100%; /* Full width table */
-  border-spacing: 0; /* No spacing between cells */
-  margin-top: 20px; /* Space from previous content */
-  border-top: 2px solid black; /* Add a top border */
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 20px;
+  border-top: 2px solid black;
 }
 
 .about-section {
-  width: 75%; /* 75% width of the table */
+  width: 75%;
   padding: 20px;
-  vertical-align: top; /* Align text to the top */
+  vertical-align: top;
 }
 
 .button-section {
-  width: 25%; /* 25% width of the table */
-  padding: 0; /* Remove padding for better alignment */
-  border-left: 2px solid black; /* Black dividing line */
-  vertical-align: top; /* Align buttons to the top */
-  text-align: center; /* Center buttons horizontally */
+  width: 25%;
+  padding: 0;
+  border-left: 2px solid black;
+  vertical-align: top;
+  text-align: center;
 }
 
 .button-wrapper {
-  height: 100%; /* Fill the height of the cell */
+  height: 100%;
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  justify-content: space-evenly; /* Distribute buttons evenly in height */
-  align-items: center; /* Center buttons horizontally */
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .button {
   display: block;
   text-decoration: none;
-  padding: 10px 15px; /* Button size */
+  padding: 10px 15px;
   border-radius: 5px;
   font-size: 0.9em;
-  width: 80%; /* Set button width to ensure no cutting off */
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.red-button {
-  background-color: #FF0000;
-  color: white;
-  border: none;
-}
-
-.red-button:hover {
-  background-color: #990000;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .layout-table {
-    flex-direction: column;
-  }
-
-  .about-section, .button-section {
-    width: 100%; /* Make sections stack */
-    border: none; /* Remove borders on smaller screens */
-  }
-
-  .button-wrapper {
-    align-items: stretch; /* Let buttons stretch in width for small screens */
-  }
-}
-.button {
-  display: block;
-  text-decoration: none;
-  padding: 10px 15px; /* Button size */
-  border-radius: 5px;
-  font-size: 0.9em;
-  width: 80%; /* Set button width to ensure no cutting off */
+  width: 80%;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -293,38 +259,75 @@ main {
 .red-button:hover {
   background-color: #005582; /* Darker LinkedIn blue for hover effect */
 }
-/* Dark Mode Button */
-.dark-mode-btn {
-  background-color: #b0b0b0; /* Ash color for light mode */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px; /* Spacing before Contact Info */
-  transition: background-color 0.3s ease;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .button-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .button-wrapper a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .linkedin-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 
-.dark-mode-btn:hover {
-  background-color: #888888; /* Slightly darker ash color on hover */
-}
+@media (max-width: 480px) {
+  .name {
+    font-size: 18px;
+  }
 
-body.dark-mode {
-  background-color: #121212; /* Dark background for dark mode */
-  color: white; /* Light text for dark mode */
-}
+  .description {
+    font-size: 12px;
+  }
 
-body.dark-mode .profile-card {
-  background-color: #1e1e1e; /* Dark card background */
-  color: white; /* Light text for card */
-}
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
 
-body.dark-mode .red-button {
-  background-color: #444; /* Dark buttons */
+  .button-wrapper a {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
-
-body.dark-mode .linkedin-link {
-  background-color: #005582; /* Darker LinkedIn button in dark mode */
-}
-
