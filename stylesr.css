@@ -73,3 +73,67 @@
 .publications-table td a:focus {
   text-decoration: underline;
 }
+.publications a, .research a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+.publications img, .research img {
+    vertical-align: middle;
+    margin-right: 5px; 
+}
+.publications span, .research span {
+    font-size: 0.9em; 
+    vertical-align: middle;
+}
+.publications a:hover, .research a:hover {
+    text-decoration: underline;
+}
+.orcid-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 3px solid #4CAF50;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.orcid-button .orcid-logo {
+    height: 24px;
+    margin-right: 10px;
+    transition: opacity 0.3s;
+}
+
+.orcid-button .orcid-id {
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.orcid-button:hover .orcid-logo,
+.orcid-button:hover .orcid-id {
+    opacity: 0.8;
+}
+.marquee-green-border {
+    padding: 5px;
+    border: 2px solid #4CAF50; /* Green border color */
+    border-radius: 4px;
+    background-color: #fff; /* White background for clarity */
+    color: #333; /* Dark text color for readability */
+    font-size: 0.9em;
+}
+.marquee {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+    color: #333;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}

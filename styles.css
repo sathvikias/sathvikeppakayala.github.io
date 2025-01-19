@@ -208,3 +208,123 @@ main {
 .linkedin-link:hover {
   background-color: #005582;
 }
+/* General styling remains the same */
+
+.layout-table {
+  width: 100%; /* Full width table */
+  border-spacing: 0; /* No spacing between cells */
+  margin-top: 20px; /* Space from previous content */
+  border-top: 2px solid black; /* Add a top border */
+}
+
+.about-section {
+  width: 75%; /* 75% width of the table */
+  padding: 20px;
+  vertical-align: top; /* Align text to the top */
+}
+
+.button-section {
+  width: 25%; /* 25% width of the table */
+  padding: 0; /* Remove padding for better alignment */
+  border-left: 2px solid black; /* Black dividing line */
+  vertical-align: top; /* Align buttons to the top */
+  text-align: center; /* Center buttons horizontally */
+}
+
+.button-wrapper {
+  height: 100%; /* Fill the height of the cell */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: space-evenly; /* Distribute buttons evenly in height */
+  align-items: center; /* Center buttons horizontally */
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+  padding: 10px 15px; /* Button size */
+  border-radius: 5px;
+  font-size: 0.9em;
+  width: 80%; /* Set button width to ensure no cutting off */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.red-button {
+  background-color: #FF0000;
+  color: white;
+  border: none;
+}
+
+.red-button:hover {
+  background-color: #990000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .layout-table {
+    flex-direction: column;
+  }
+
+  .about-section, .button-section {
+    width: 100%; /* Make sections stack */
+    border: none; /* Remove borders on smaller screens */
+  }
+
+  .button-wrapper {
+    align-items: stretch; /* Let buttons stretch in width for small screens */
+  }
+}
+.button {
+  display: block;
+  text-decoration: none;
+  padding: 10px 15px; /* Button size */
+  border-radius: 5px;
+  font-size: 0.9em;
+  width: 80%; /* Set button width to ensure no cutting off */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.red-button {
+  background-color: #0077b5; /* LinkedIn blue */
+  color: white;
+  border: none;
+}
+
+.red-button:hover {
+  background-color: #005582; /* Darker LinkedIn blue for hover effect */
+}
+/* Dark Mode Button */
+.dark-mode-btn {
+  background-color: #b0b0b0; /* Ash color for light mode */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Spacing before Contact Info */
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+  background-color: #888888; /* Slightly darker ash color on hover */
+}
+
+body.dark-mode {
+  background-color: #121212; /* Dark background for dark mode */
+  color: white; /* Light text for dark mode */
+}
+
+body.dark-mode .profile-card {
+  background-color: #1e1e1e; /* Dark card background */
+  color: white; /* Light text for card */
+}
+
+body.dark-mode .red-button {
+  background-color: #444; /* Dark buttons */
+}
+
+body.dark-mode .linkedin-link {
+  background-color: #005582; /* Darker LinkedIn button in dark mode */
+}
+
