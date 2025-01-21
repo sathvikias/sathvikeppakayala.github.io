@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Development</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .navbar {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .menu-button {
+      background-color: #0077b5;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .menu-button:hover {
+      background-color: #005582;
+    }
+    .menu-button:focus {
+      outline: none;
+    }
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 20px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      z-index: 1000;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .dropdown-menu a {
+      text-decoration: none;
+      color: white;
+      background-color: red;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 5px 0;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-menu a:hover {
+      background-color: #b30000;
+    }
+    .dropdown-menu a:focus {
+      outline: none;
+    }
+    .show {
+      display: flex;
+    }
+    .marquee-container {
+      width: 50%; 
+      margin: 20px auto; 
+      border: 2px solid green; 
+      overflow: hidden;
+    }
+    .marquee {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black;
+    }
+    .center-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin-top: 100px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/174/174857.png'); /* LinkedIn logo */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      opacity: 0.5; /* Transparency set to 50% */
+    }
+    .center-button {
+      position: absolute; /* Keeps the button on top of the transparent background */
+      background-color: rgba(0, 0, 0, 1); /* Solid background for the button */
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: 5px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .center-button:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+      transform: scale(1.1); /* Slight zoom effect */
+    }
+    .center-button:focus {
+      outline: none;
+    }
+    .achievements-title {
+      font-size: 2rem;
+      color: #333;
+      margin-top: 50px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="resume.html">Resume</a>
+      <a href="experience.html">Experience</a>
+      <a href="recommendations.html">Recommendations</a>
+    </div>
+  </div>
+    <div class="achievements-title">Certifications</div>
+  <div class="marquee-container">
+    <marquee class="marquee">This page is under development</marquee>
+  </div>
+  <div class="center-container">
+    <button class="center-button" onclick="window.open('https://www.linkedin.com/in/eppakayala-sathvik-867213291', '_blank');">Connect with Me</button>
+  </div>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
