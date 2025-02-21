@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sathvik's Profile</title>
-  <link rel="stylesheet" href="styles.css">
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -20,6 +19,250 @@
     }
   });
 </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: lavenderblush;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hamburger-menu {
+      position: relative;
+      margin-left: 30px;
+      padding: 10px;
+    }
+
+    .hamburger-button {
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hamburger-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 8px;
+      top: 40px;
+      left: 0;
+    }
+
+    .hamburger-menu:hover .hamburger-content {
+      display: block;
+    }
+
+    .hamburger-content a {
+      display: block;
+      color: white;
+      padding: 8px 0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .hamburger-content a:hover {
+      color: #1abc9c;
+    }
+
+    nav .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background: #1abc9c;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: rgba(2, 55, 95, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      width: 400px;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      transform: scale(1.1);
+    }
+
+    .dropdown-content a {
+      background-color: transparent;
+      color: lavender;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: lavender;
+    }
+
+    .dropdown-content img {
+      width: 20px;
+      margin-right: 8px;
+    }
+
+    .profile-container {
+      text-align: center;
+      margin: 40px auto;
+      background: lavenderblush;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 800px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-container:hover {
+      transform: scale(1.02);
+    }
+
+    .profile-picture {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .name {
+      font-size: 2.8rem;
+      margin: 15px 0;
+      color: #1abc9c;
+    }
+
+    .linkedin-link {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+      background: #0077b5;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .linkedin-link:hover {
+      background: #005582;
+    }
+
+    .announcement {
+      color: #f1c40f;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .about-section {
+      text-align: justify;
+      padding: 40px;
+      background: lavenderblush;
+      color: #333;
+      border-radius: 12px;
+      margin: 0 auto 40px;
+      max-width: 900px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .about-section:hover {
+      transform: scale(1.02);
+    }
+
+    .about-section h2 {
+      text-align: center;
+      color: #1abc9c;
+    }
+
+    .dropdown {
+      padding-right: 30px;
+    }
+
+    .button-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+    }
+
+    .dropdown-heading {
+      color: ghostwhite;
+    }
+
+    .button {
+      width: 400px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      font-size: 24px;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    .red-button { background-color: #e74c3c; }
+    .blue-button { background-color: #3498db; }
+    .green-button { background-color: #2ecc71; }
+    .orange-button { background-color: #e67e22; }
+    .purple-button { background-color: #9b59b6; }
+    .teal-button { background-color: #1abc9c; }
+
+    @media (max-width: 768px) {
+      .button-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        width: 80%;
+        height: auto;
+      }
+    }
+
+    .description{
+      color: black;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -35,9 +278,7 @@
       </div>
     </div>
     <h1 class="header-title">
-      <div>
-        <a href="index.html">PROFILE</a>
-      </div>
+      <a href="index.html" style="color:white; text-decoration:none;">PROFILE</a>
     </h1>
     <nav>
       <div class="dropdown">
@@ -59,38 +300,29 @@
 
   <main>
     <div class="profile-container">
-      <div class="profile-card">
-        <img src="Un categorized/pass.jpg" alt="Profile Picture" class="profile-picture">
-        <h1 class="name">Eppakayala Sathvik</h1>
-        <p class="description">Welcome to my profile! Connect with me on LinkedIn.</p>
-        <a href="https://www.linkedin.com/in/eppakayala-sathvik-867213291" target="_blank" class="linkedin-link">Visit my LinkedIn</a>
-        <table class="layout-table">
-          <tr>
-            <!-- About Me Section -->
-            <td class="about-section">
-              <h2>About Me</h2>
-              <p align="left">
-                I am an energetic, self-motivated person who enjoys learning new things daily and working on myself. I have problem-solving, data analytics, data science, and mathematics abilities and a flair for creativity in overcoming obstacles. Acknowledged for composure in stressful situations and for sound decision-making. Effective communication and interaction abilities and a strong team member motivated to meet new people and deliver beneficial results.
-              </p>
-              <p align="left">
-                As an ambitious undergraduate at R.V.R. & J.C. College of Engineering, I, Eppakayala Sathvik, am deeply immersed in the transformative fields of Machine Learning and Artificial Intelligence. My academic journey is characterized by a relentless pursuit of knowledge, particularly in leveraging AI to solve real-world problems. With a strong foundation in critical thinking and problem-solving, I approach challenges with a systematic and innovative mindset. My passion extends beyond theory; I am experienced in the practical aspects of technology, having honed my skills in real-world project management and execution. Data analytics is at the core of my research endeavors, where I apply my analytical prowess to dissect complex datasets, extract meaningful insights, and contribute to scientific publications. I am committed to advancing the frontier of AI, bringing a fresh perspective to research, and fostering collaborative networks that drive technological progress. As a dynamic individual with a flair for creativity and a penchant for continuous learning, I am eager to engage with like-minded peers and professionals to explore new horizons in the ever-evolving landscape of machine intelligence.
-              </p>
-            </td>
-            <!-- Buttons Section -->
-            <td class="button-section">
-              <div class="button-wrapper">
-                <br>
-                <a href="research.html" class="button red-button">Research</a><br>
-                <a href="achievements.html" class="button red-button">Achievements</a><br>
-                <a href="certifications.html" class="button red-button">Certifications</a><br>
-                <a href="resume.html" class="button red-button">Resume</a><br>
-                <a href="experience.html" class="button red-button">Experience</a><br>
-                <a href="recommendations.html" class="button red-button">Recommendations</a><br>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
+      <img src="Un categorized/pass.jpg" alt="Profile Picture" class="profile-picture">
+      <h1 class="name">Eppakayala Sathvik</h1>
+      <p class="description">Welcome to my profile! Connect with me on LinkedIn.</p>
+      <a href="https://www.linkedin.com/in/eppakayala-sathvik-867213291" target="_blank" class="linkedin-link">Visit my LinkedIn</a>
+    </div>
+
+    <div class="about-section">
+      <h2>About Me</h2>
+      <p>
+        I am an energetic, self-motivated person who enjoys learning new things daily and working on myself. I have problem-solving, data analytics, data science, and mathematics abilities and a flair for creativity in overcoming obstacles. Acknowledged for composure in stressful situations and for sound decision-making. Effective communication and interaction abilities and a strong team member motivated to meet new people and deliver beneficial results.
+      </p>
+      <p>
+        As an ambitious undergraduate at R.V.R. & J.C. College of Engineering, I, Eppakayala Sathvik, am deeply immersed in the transformative fields of Machine Learning and Artificial Intelligence. My academic journey is characterized by a relentless pursuit of knowledge, particularly in leveraging AI to solve real-world problems. With a strong foundation in critical thinking and problem-solving, I approach challenges with a systematic and innovative mindset. My passion extends beyond theory; I am experienced in the practical aspects of technology, having honed my skills in real-world project management and execution. Data analytics is at the core of my research endeavors, where I apply my analytical prowess to dissect complex datasets, extract meaningful insights, and contribute to scientific publications. I am committed to advancing the frontier of AI, bringing a fresh perspective to research, and fostering collaborative networks that drive technological progress. As a dynamic individual with a flair for creativity and a penchant for continuous learning, I am eager to engage with like-minded peers and professionals to explore new horizons in the ever-evolving landscape of machine intelligence.
+      </p>
+    </div>
+
+    <div class="button-wrapper">
+      <a href="research.html" class="button red-button">Research</a>
+      <a href="achievements.html" class="button blue-button">Achievements</a>
+      <a href="certifications.html" class="button green-button">Certifications</a>
+      <a href="resume.html" class="button orange-button">Resume</a>
+      <a href="experience.html" class="button purple-button">Experience</a>
+      <a href="recommendations.html" class="button teal-button">Recommendations</a>
     </div>
   </main>
 </body>
