@@ -3,153 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Under Development</title>
+  <title>Sathvik's Experience</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
       background-color: #f4f4f4;
-    }
-    .navbar {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-    }
-    .menu-button {
-      background-color: #0077b5;
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .menu-button:hover {
-      background-color: #005582;
-    }
-    .menu-button:focus {
-      outline: none;
-    }
-    .dropdown-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      left: 20px;
-      background-color: white;
-      border: 1px solid black;
-      border-radius: 5px;
-      z-index: 1000;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    .dropdown-menu a {
-      text-decoration: none;
-      color: white;
-      background-color: red;
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 5px 0;
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
-    .dropdown-menu a:hover {
-      background-color: #b30000;
-    }
-    .dropdown-menu a:focus {
-      outline: none;
-    }
-    .show {
-      display: flex;
-    }
-    .marquee-container {
-      width: 50%; 
-      margin: 20px auto; 
-      border: 2px solid green; 
-      overflow: hidden;
-    }
-    .marquee {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: black;
-    }
-    .center-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin-top: 100px;
-      background-image: url('https://cdn-icons-png.flaticon.com/512/174/174857.png'); /* LinkedIn logo */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      opacity: 0.5; /* Transparency set to 50% */
-    }
-    .center-button {
-      position: absolute; /* Keeps the button on top of the transparent background */
-      background-color: rgba(0, 0, 0, 1); /* Solid background for the button */
-      color: white;
-      font-size: 1rem;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: 5px solid black;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .center-button:hover {
-      background-color: rgba(0, 0, 0, 0.9);
-      transform: scale(1.1); /* Slight zoom effect */
-    }
-    .center-button:focus {
-      outline: none;
-    }
-    .achievements-title {
-      font-size: 2rem;
       color: #333;
-      margin-top: 50px;
-      font-weight: bold;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hamburger-menu {
+      position: relative;
+    }
+
+    .hamburger-button {
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hamburger-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 8px;
+      top: 40px;
+      left: 0;
+    }
+
+    .hamburger-menu:hover .hamburger-content {
+      display: block;
+    }
+
+    .hamburger-content a {
+      display: block;
+      color: white;
+      padding: 8px 0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .hamburger-content a:hover {
+      color: #1abc9c;
+    }
+
+    .experience-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .experience-container h2 {
       text-align: center;
+      color: #1abc9c;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section h3 {
+      color: #2c3e50;
+      border-bottom: 2px solid #1abc9c;
+      padding-bottom: 5px;
+    }
+
+    .item {
+      margin: 15px 0;
+      cursor: pointer;
+      background: lavender;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+
+    .item:hover {
+      background: #e6e6fa;
+    }
+
+    .item-details {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-left: 4px solid #1abc9c;
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
-    <div class="dropdown-menu" id="dropdownMenu">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="resume.html">Resume</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="recommendations.html">Recommendations</a>
+  <header>
+    <div class="hamburger-menu">
+      <button class="hamburger-button">&#9776;</button>
+      <div class="hamburger-content">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="resume.html">Resume</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="recommendations.html">Recommendations</a>
+      </div>
     </div>
-  </div>
-    <div class="achievements-title">Certifications</div>
-  <div class="marquee-container">
-    <marquee class="marquee">This page is under development</marquee>
-  </div>
-  <div class="center-container">
-    <button class="center-button" onclick="window.open('https://www.linkedin.com/in/eppakayala-sathvik-867213291', '_blank');">Connect with Me</button>
-  </div>
+    <h1 class="header-title" style="color:white;">EXPERIENCE</h1>
+  </header>
 
+  <main>
+    <div class="experience-container">
+      <h2>My Experience</h2>
+
+      <div class="section">
+        <h3>Internships</h3>
+        <div class="item" onclick="toggleDetails('intern1')">
+          <strong>Internship at NIT Warangal ▼</strong>
+          <div class="item-details" id="intern1">
+            <p><strong>Organization:</strong> National Institute of Technology, Warangal</p>
+            <p><strong>Role:</strong> Software Testing Internship</p>
+            <p><strong>Timeline:</strong> December 2024 - February 2025</p>
+            <p><strong>Description:</strong> <ul>Led software testing and automation with Selenium WebDriver with respect to ensuring the quality of applications and effectiveness. Automated web testing using Selenium IDE, WebDriver, and Selenium Grid for effective Hub management of distributed test execution.</ul>
+<ul>Tested the TrustInn Software Application developed by NIT Warangal scholars, providing detailed bug reports and suggestions for optimization. Streamlined data collection and reporting processes, reducing processing time by 20% and improving operational efficiency. </ul><ul>Collaborated with cross-functional teams to gather requirements, define project scopes, and ensure alignment with business objectives, driving successful project outcomes. Developed thorough reports and presentations summarizing the findings and insights that shaped major business decisions.</ul>
+</p>
+          </div>
+        </div>
+                <div class="item" onclick="toggleDetails('intern2')">
+          <strong>Internship at AolDev ▼</strong>
+          <div class="item-details" id="intern2">
+            <p><strong>Organization:</strong> AolDev</p>
+            <p><strong>Role:</strong> Machine Learning Intern</p>
+            <p><strong>Timeline:</strong> December 2024 - Currently Working</p>
+            <p><strong>Description:</strong> <ul>Tested and optimized a web application built with React framework and integrated with machine learning algorithms for chatbot creation, ensuring seamless functionality and user experience.</ul>
+<ul>Contributed to the development of a Baseball application, providing users with a live dashboard, team selection features, real- time reviews, highlights, chatbot suggestions, and a virtual dugout experience.</ul><ul>Developed and deployed a chatbot using the Gemini API, successfully training the model to enhance user interaction and provide intelligent recommendations.</ul><ul> Collaborated effectively using Git and GitHub, managing code changes through pull requests and ensuring version control and smooth integration across the development team</ul>
+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Workshops</h3>
+        <div class="item" onclick="toggleDetails('workshop1')">
+          <strong>Data Science & Analytics Workshop ▼</strong>
+          <div class="item-details" id="workshop1">
+            <p><strong>Conducted By:</strong> Jobaaj Learnings</p>
+            <p><strong>Date:</strong> March 2024</p>
+            <p><strong>Description:</strong> Hands-on workshop covering basics of Data Science and Analytics algorithms with real-world applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Learning</h3>
+        <div class="item" onclick="toggleDetails('learning1')">
+          <strong>Deep Learning Specialization</strong>
+          <div class="item-details" id="learning1">
+            <p><strong>Platform:</strong> Coursera</p>
+            <p><strong>Completed:</strong> January 2024</p>
+            <p><strong>Description:</strong> Comprehensive course covering neural networks, CNNs, RNNs, and sequence models.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.classList.toggle('show');
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+      } else {
+        details.style.display = "none";
+      }
     }
   </script>
 </body>
