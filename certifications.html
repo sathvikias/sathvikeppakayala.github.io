@@ -3,154 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Under Development</title>
+  <title>Sathvik's Certifications</title>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      const metaViewport = document.querySelector('meta[name="viewport"]');
+      if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=1024');
+      } else {
+        const newMetaViewport = document.createElement('meta');
+        newMetaViewport.name = 'viewport';
+        newMetaViewport.content = 'width=1024';
+        document.head.appendChild(newMetaViewport);
+      }
+    }
+  });
+  </script>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-    .navbar {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-    }
-    .menu-button {
-      background-color: #0077b5;
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .menu-button:hover {
-      background-color: #005582;
-    }
-    .menu-button:focus {
-      outline: none;
-    }
-    .dropdown-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      left: 20px;
-      background-color: white;
-      border: 1px solid black;
-      border-radius: 5px;
-      z-index: 1000;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    .dropdown-menu a {
-      text-decoration: none;
-      color: white;
-      background-color: red;
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 5px 0;
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
-    .dropdown-menu a:hover {
-      background-color: #b30000;
-    }
-    .dropdown-menu a:focus {
-      outline: none;
-    }
-    .show {
-      display: flex;
-    }
-    .marquee-container {
-      width: 50%; 
-      margin: 20px auto; 
-      border: 2px solid green; 
-      overflow: hidden;
-    }
-    .marquee {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: black;
-    }
-    .center-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin-top: 100px;
-      background-image: url('https://cdn-icons-png.flaticon.com/512/174/174857.png'); /* LinkedIn logo */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      opacity: 0.5; /* Transparency set to 50% */
-    }
-    .center-button {
-      position: absolute; /* Keeps the button on top of the transparent background */
-      background-color: rgba(0, 0, 0, 1); /* Solid background for the button */
-      color: white;
-      font-size: 1rem;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: 5px solid black;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .center-button:hover {
-      background-color: rgba(0, 0, 0, 0.9);
-      transform: scale(1.1); /* Slight zoom effect */
-    }
-    .center-button:focus {
-      outline: none;
-    }
-    .achievements-title {
-      font-size: 2rem;
+      font-family: 'Poppins', sans-serif;
+      background: lavenderblush;
       color: #333;
-      margin-top: 50px;
-      font-weight: bold;
-      text-align: center;
+      overflow-x: hidden;
     }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hamburger-menu {
+      position: relative;
+      margin-left: 30px;
+      padding: 10px;
+    }
+
+    .hamburger-button {
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hamburger-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 8px;
+      top: 40px;
+      left: 0;
+    }
+
+    .hamburger-menu:hover .hamburger-content {
+      display: block;
+    }
+
+    .hamburger-content a {
+      display: block;
+      color: white;
+      padding: 8px 0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .hamburger-content a:hover {
+      color: #1abc9c;
+    }
+
+    .certifications-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .certifications-container h2 {
+      text-align: center;
+      color: #1abc9c;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .certification-card {
+      background: lavender;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .certification-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .certification-title {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
-</head>
-<body>
-  <div class="navbar">
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
-    <div class="dropdown-menu" id="dropdownMenu">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="resume.html">Resume</a>
-      <a href="experience.html">Experience</a>
-      <a href="recommendations.html">Recommendations</a>
-    </div>
-  </div>
-    <div class="achievements-title">Certifications</div>
-  <div class="marquee-container">
-    <marquee class="marquee">This page is under development</marquee>
-  </div>
-  <div class="center-container">
-    <button class="center-button" onclick="window.open('https://www.linkedin.com/in/eppakayala-sathvik-867213291', '_blank');">Connect with Me</button>
-  </div>
-
-
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.classList.toggle('show');
+    function openVerificationPage(certTitle) {
+      alert("This opens in a New Window")
+      window.open(certTitle, '_blank');
     }
   </script>
+</head>
+<body>
+  <header>
+    <div class="hamburger-menu">
+      <button class="hamburger-button">&#9776;</button>
+      <div class="hamburger-content">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research Areas</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="resume.html">Resume</a>
+        <a href="experience.html">Experience</a>
+        <a href="recommendations.html">Recommendations</a>
+      </div>
+    </div>
+    <center>
+    <h1 class="header-title" align="center">
+      <a href="certifications.html" style="color:white; text-decoration:none;">CERTIFICATIONS</a>
+    </h1>
+  </center>
+  </header>
+
+  <main>
+    <div class="certifications-container">
+      <h2>My Certifications</h2>
+      <div class="certifications-grid">
+        <div class="certification-card" onclick="openVerificationPage('https://www.guvi.in/share-certificate/5824l799o1KY82Rb45')">
+          <img src="Un categorized/ai.png" alt="Certification 1">
+          <div class="certification-title">Generative AI from GUVI, IITM Research Park</div>
+        </div>
+        <div class="certification-card" onclick="openVerificationPage('https://www.guvi.in/share-certificate/T66G8Y51w113mj1795')">
+          <img src="Un categorized/python.png" alt="Certification 2">
+          <div class="certification-title">Python from GUVI, IITM Research Park</div>
+        </div>
+        <div class="certification-card" onclick="openVerificationPage('https://www.linkedin.com/posts/eppakayala-sathvik-867213291_certificate-to-completion-cybersecurity-essentials-activity-7298340074784493568-W_zT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEawUg8BopAMTpMvI-jXp0hyUxMMe2RwuZA')">
+          <img src="Un categorized/cisco.png" alt="Certification 3">
+          <div class="certification-title">Cybersecurity Essential from Cisco Networking Academy</div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
