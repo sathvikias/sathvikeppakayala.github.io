@@ -14,11 +14,44 @@
       overflow-x: hidden;
     }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 50% !important;
-  }
-}
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .button-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        width: 80%;
+        height: auto;
+        font-size: 18px;
+      }
+
+      .profile-picture {
+        width: 100px;
+        height: 100px;
+      }
+
+      .name {
+        font-size: 1.8rem;
+      }
+
+      .about-section {
+        padding: 15px;
+      }
+
+      .dropdown-content {
+        width: 250px;
+      }
+    }
+
+    .description {
+      color: black;
+    }
 
     header {
       display: flex;
