@@ -4,21 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sathvik's Profile</title>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-      const metaViewport = document.querySelector('meta[name="viewport"]');
-      if (metaViewport) {
-        metaViewport.setAttribute('content', 'width=1024');
-      } else {
-        const newMetaViewport = document.createElement('meta');
-        newMetaViewport.name = 'viewport';
-        newMetaViewport.content = 'width=1024';
-        document.head.appendChild(newMetaViewport);
-      }
-    }
-  });
-</script>
+
   <style>
     body {
       margin: 0;
@@ -30,7 +16,7 @@
 
 @media (max-width: 768px) {
   body {
-    font-size: 50%;
+    font-size: 50% !important;
   }
 }
 
