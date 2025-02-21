@@ -4,7 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sathvik's Profile</title>
-
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      const metaViewport = document.querySelector('meta[name="viewport"]');
+      if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=1024');
+      } else {
+        const newMetaViewport = document.createElement('meta');
+        newMetaViewport.name = 'viewport';
+        newMetaViewport.content = 'width=1024';
+        document.head.appendChild(newMetaViewport);
+      }
+    }
+  });
+</script>
   <style>
     body {
       margin: 0;
@@ -12,45 +26,6 @@
       background: lavenderblush;
       color: #fff;
       overflow-x: hidden;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .button-wrapper {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .button {
-        width: 80%;
-        height: auto;
-        font-size: 18px;
-      }
-
-      .profile-picture {
-        width: 100px;
-        height: 100px;
-      }
-
-      .name {
-        font-size: 1.8rem;
-      }
-
-      .about-section {
-        padding: 15px;
-      }
-
-      .dropdown-content {
-        width: 250px;
-      }
-    }
-
-    .description {
-      color: black;
     }
 
     header {
