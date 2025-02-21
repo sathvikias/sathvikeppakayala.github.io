@@ -28,46 +28,69 @@
       overflow-x: hidden;
     }
 
-    @media (max-width: 768px) {
+ /* Mobile Optimizations */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
   header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 20px;
   }
 
-  .header-title {
-    margin-top: 10px;
-    font-size: 1.5rem;
+  .hamburger-menu {
+    margin-left: 0;
   }
 
   .hamburger-content {
+    position: static;
     width: 100%;
-    left: 0;
   }
 
-  .hamburger-content a {
-    padding: 10px;
+  .dropbtn {
+    width: 100%;
     text-align: left;
   }
 
-  .experience-container {
-    padding: 15px;
-    margin: 20px 10px;
+  .dropdown-content {
+    width: 100%;
+    position: static;
   }
 
-  .experience-container h2 {
-    font-size: 1.5rem;
+  .profile-container {
+    margin: 20px;
+    padding: 20px;
   }
 
-  .section h3 {
-    font-size: 1.2rem;
+  .profile-picture {
+    width: 120px;
+    height: 120px;
   }
 
-  .item {
-    padding: 12px;
+  .name {
+    font-size: 2rem;
   }
 
-  .item-details {
-    font-size: 0.9rem;
+  .about-section {
+    padding: 20px;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .button {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .linkedin-link {
+    width: 100%;
+    text-align: center;
   }
 }
 
