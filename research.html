@@ -3,64 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research - Sathvik's Profile</title>
-  <link rel="stylesheet" href="stylesr.css">
+  <title>Sathvik's Research</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hamburger-menu {
+      position: relative;
+    }
+
+    .hamburger-button {
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hamburger-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(2, 55, 95, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 8px;
+      top: 40px;
+      left: 0;
+    }
+
+    .hamburger-menu:hover .hamburger-content {
+      display: block;
+    }
+
+    .hamburger-content a {
+      display: block;
+      color: white;
+      padding: 8px 0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .hamburger-content a:hover {
+      color: #1abc9c;
+    }
+
+    .research-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .research-container h2 {
+      text-align: center;
+      color: #1abc9c;
+    }
+
+    .publications-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .publications-table th, .publications-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .publications-table th {
+      background-color: #f2f2f2;
+    }
+
+    .publications-table a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .publications-table a:hover {
+      color: #1abc9c;
+    }
+
+    .rg-logo {
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+
+    .reference-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .reference-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #1abc9c;
+      font-weight: bold;
+    }
+
+    .marquee-green-border {
+      margin-top: 20px;
+      padding: 10px;
+      border: 2px solid green;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .profile-links {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .profile-links img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .profile-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #1abc9c;
+      font-weight: bold;
+    }
+
+    .img{
+      width: 35px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Home Button -->
-  <div class="home-button">
-    <a href="index.html" class="home-link">Home</a>
-  </div>
-  
-  <!-- Main Content -->
-  <main>
-    <div class="profile-container">
-      <div class="profile-card">
-        <h2 class="research-title">Research & Publications</h2>
-    <section class="publications">
-        <a href="https://orcid.org/0009-0001-4524-8195" target="_blank" rel="noopener noreferrer" class="orcid-button">
-            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD" class="orcid-logo">
-            <span class="orcid-id">0009-0001-4524-8195</span>
-        </a>
-    </section>
-        <table class="publications-table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Journal/Source</th>
-              <th>DOI</th>
-              <th>Contributors</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="https://www.researchgate.net/publication/371659992_User_Bias_Theory_for_Machine_Learning_Exploring_Strategies_Challenges_and_Implications" target="_blank">User Bias Theory for Machine Learning: Exploring Strategies, Challenges and Implications</a></td>
-              <td>International Journal of All Research Education and Scientific Methods (2024)</td>
-              <td><a href="https://doi.org/10.56025/ijraesm.2024.1211241140" target="_blank">10.56025/ijraesm.2024.1211241140</a></td>
-              <td>Sathvik Eppakayala</td>
-            </tr>
-
-            <tr>
-              <td><a href="https://www.researchgate.net/publication/371659993_TOOTHBRUSH_BRISTLE_DISTRIBUTION_A_NOVEL_APPROACH_FOR_MACHINE_LEARNING_MODELS_TO_ACHIEVE_FASTER_RESULTS_IN_EMERGENCY_SITUATIONS" target="_blank">TOOTHBRUSH BRISTLE DISTRIBUTION: A NOVEL APPROACH FOR MACHINE LEARNING MODELS TO ACHIEVE FASTER RESULTS IN EMERGENCY SITUATIONS</a></td>
-              <td>International Journal of Engineering Applied Sciences and Technology (2024-09-01)</td>
-              <td><a href="https://doi.org/10.33564/ijeast.2024.v09105.028" target="_blank">10.33564/ijeast.2024.v09105.028</a></td>
-              <td>Sathvik Eppakayala</td>
-            </tr>
-
-            <tr>
-              <td><a href="https://www.researchgate.net/publication/371659994_Automated_Email_Spam_Classifier_Application_Using_Python_Flask_Machine_Learning_and_Selenium_Tool" target="_blank">Automated Email Spam Classifier Application Using Python Flask, Machine Learning, and Selenium Tool</a></td>
-              <td>Other</td>
-              <td><a href="https://doi.org/10.21203/rs.3.rs-5746284/v1" target="_blank">10.21203/rs.3.rs-5746284/v1</a></td>
-              <td>Sathvik Eppakayala; Shiva Kumar Goud Ankula</td>
-            </tr>
-          </tbody>
-        </table>
-        
+  <header>
+    <div class="hamburger-menu">
+      <button class="hamburger-button">&#9776;</button>
+      <div class="hamburger-content">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="resume.html">Resume</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="recommendations.html">Recommendations</a>
       </div>
     </div>
+    <h1 class="header-title" style="color:white;">RESEARCH</h1>
+  </header>
+
+  <div class="profile-links">
+    <a href="https://orcid.org/0009-0001-4524-8195" target="_blank">
+      <img src="Un categorized\orcid.png" alt="ORCID">ORCID Profile
+    </a>
+    <a href="https://scholar.google.com/citations?user=iSLpBK4AAAAJ&hl=en&oi=ao" target="_blank">
+      <img src="Un categorized\sc.png" alt="Google Scholar" class="img">Google Scholar
+    </a>
+  </div>
+
+  <main>
+    <div class="research-container">
+      <h2>My Publications</h2>
+
+      <table class="publications-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Journal/Source</th>
+            <th>DOI</th>
+            <th>Contributors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.researchgate.net/publication/371659992_User_Bias_Theory_for_Machine_Learning_Exploring_Strategies_Challenges_and_Implications" target="_blank">User Bias Theory for Machine Learning: Exploring Strategies, Challenges and Implications</a></td>
+            <td>International Journal of All Research Education and Scientific Methods (2024)</td>
+            <td><a href="https://doi.org/10.56025/ijraesm.2024.1211241140" target="_blank">10.56025/ijraesm.2024.1211241140</a></td>
+            <td>Sathvik Eppakayala</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.researchgate.net/publication/371659993_TOOTHBRUSH_BRISTLE_DISTRIBUTION_A_NOVEL_APPROACH_FOR_MACHINE_LEARNING_MODELS_TO_ACHIEVE_FASTER_RESULTS_IN_EMERGENCY_SITUATIONS" target="_blank">TOOTHBRUSH BRISTLE DISTRIBUTION: A NOVEL APPROACH FOR MACHINE LEARNING MODELS TO ACHIEVE FASTER RESULTS IN EMERGENCY SITUATIONS</a></td>
+            <td>International Journal of Engineering Applied Sciences and Technology (2024-09-01)</td>
+            <td><a href="https://doi.org/10.33564/ijeast.2024.v09105.028" target="_blank">10.33564/ijeast.2024.v09105.028</a></td>
+            <td>Sathvik Eppakayala</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.researchgate.net/publication/371659994_Automated_Email_Spam_Classifier_Application_Using_Python_Flask_Machine_Learning_and_Selenium_Tool" target="_blank">Automated Email Spam Classifier Application Using Python Flask, Machine Learning, and Selenium Tool</a></td>
+            <td>Other</td>
+            <td><a href="https://doi.org/10.21203/rs.3.rs-5746284/v1" target="_blank">10.21203/rs.3.rs-5746284/v1</a></td>
+            <td>Sathvik Eppakayala; Shiva Kumar Goud Ankula</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="marquee-green-border">
+        If you have any suggestions, questions, or would like to discuss aspects of the research, feel free to connect with me on LinkedIn or use the 'Contact Us' option available on the homepage. I am open to discussions and would be happy to address any inquiries related to the paper.
+      </div>
+
+    </div>
   </main>
-          <marquee class="marquee-green-border" behavior="scroll" direction="left">
-            If you have any suggestions, questions, or would like to discuss aspects of the research, feel free to connect with me on LinkedIn or use the 'Contact Us' option available on the homepage. I am open to discussions and would be happy to address any inquiries related to the paper.
-        </marquee>
 </body>
 </html>
