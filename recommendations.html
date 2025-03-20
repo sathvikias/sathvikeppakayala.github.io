@@ -73,6 +73,10 @@
     .file-list {
       margin-top: 10px;
     }
+    .password-container {
+      margin-top: 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -89,18 +93,46 @@
   </div>
   <div class="achievements-title">Recommendations</div>
   
-  <div class="file-container">
+  <div class="password-container" id="passwordContainer">
+    <p>Enter password for upload access or proceed without password for download only:</p>
+    <input type="password" id="passwordInput">
+    <button onclick="checkPassword()">Submit</button>
+    <button onclick="proceedWithoutPassword()">Proceed Without Password</button>
+  </div>
+
+  <div class="file-container" id="fileContainer" style="display:none;">
     <h2>Upload & Download Files</h2>
     <input type="file" id="fileInput">
     <button onclick="uploadFile()">Upload</button>
     <div class="file-list" id="fileList"></div>
   </div>
 
+  <div class="file-container" id="downloadContainer" style="display:none;">
+    <h2>Download Files</h2>
+    <div class="file-list" id="downloadList"></div>
+  </div>
+
   <script>
     function toggleMenu() {
       document.getElementById('dropdownMenu').classList.toggle('show');
     }
-    
+
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      if (password === 'Sathvik@2005') {
+        document.getElementById('passwordContainer').style.display = 'none';
+        document.getElementById('fileContainer').style.display = 'block';
+        document.getElementById('downloadContainer').style.display = 'block';
+      } else {
+        alert('Incorrect password!');
+      }
+    }
+
+    function proceedWithoutPassword() {
+      document.getElementById('passwordContainer').style.display = 'none';
+      document.getElementById('downloadContainer').style.display = 'block';
+    }
+
     function uploadFile() {
       const fileInput = document.getElementById('fileInput');
       const fileList = document.getElementById('fileList');
@@ -112,6 +144,7 @@
         link.innerText = file.name;
         link.style.display = 'block';
         fileList.appendChild(link);
+        document.getElementById('downloadList').appendChild(link.cloneNode(true));
       }
     }
   </script>
