@@ -1,0 +1,7 @@
+# Ignore VCS and common dev files
+.git
+.gitignore
+node_modules
+Dockerfile
+*.log
+README.md
